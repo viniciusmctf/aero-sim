@@ -1,9 +1,9 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-typedef aviao_t pthread_t
-typedef esteira_t pthread_t
-typedef tempo_t size_t
+typedef pthread_t aviao_t;
+typedef pthread_t esteira_t;
+typedef size_t tempo_t;
 
 typedef struct {
 	pthread_mutex_t* pistas_livres;
@@ -29,7 +29,7 @@ aeroporto_t* iniciar_aeroporto (size_t* args, size_t n_args);
  * do aeroporto. Nesta situação um avião deve pousar em seguida,
  * mas somente se houver uma pista livre para ele.
  **/
-void aproximacao_aeroporto (aeroporto_t*, aviao_t*);
+void aproximacao_aeroporto (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve fazer com que o aviao pouse, utilizando uma pista livre.
@@ -37,7 +37,7 @@ void aproximacao_aeroporto (aeroporto_t*, aviao_t*);
  * deve se acoplar a um portão, caso haja um livre, se não houver, ele deve
  * esperar.
  **/
-void pousar_aviao (aeroporto_t*, aviao_t*);
+void pousar_aviao (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve acoplar um avião a um portão de embarque livre.
@@ -45,7 +45,7 @@ void pousar_aviao (aeroporto_t*, aviao_t*);
  * o avião deve transportar suas bagagens para fora e receber novas bagagens.
  * Um avião não pode decolar sem receber novas bagagens.
  **/
-void acoplar_portao (aeroporto_t*, aviao_t*);
+void acoplar_portao (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve levar as bagagens de um avião para uma esteira e
@@ -54,24 +54,24 @@ void acoplar_portao (aeroporto_t*, aviao_t*);
  * Um avião não pode receber novas bagagens sem colocar as antigas
  * em uma esteira.
  **/
-void transportar_bagagens (aeroporto_t*, aviao_t*);
+void transportar_bagagens (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve colocar novas bagagens numa esteira, caso ela
  * esteja disponível. A esteira ficará ocupada enquanto houverem
  * bagagens nela.
  **/
-void adicionar_bagagens_esteira (aeroporto_t*, aviao_t*);
+void adicionar_bagagens_esteira (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve fazer com que um avião decole, caso haja
  * uma pista disponível para tal. Um avião que decolar deve
  * ter sua execução terminada.
  **/
-void decolar_aviao(aeroporto_t*, aviao_t*);
+void decolar_aviao (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve desalocar todos os recursos previamente 
- * alocados pelo aeroporto.
+ * alocados pelo aeroporto. Retorna 1 caso bem sucedido.
  **/
-int finalizar_aeroporto (aeroporto_t*);
+int finalizar_aeroporto (aeroporto_t* aeroporto);

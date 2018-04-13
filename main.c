@@ -1,5 +1,6 @@
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "aeroporto.h"
 
@@ -51,7 +52,7 @@ int main (int argc, char** argv) {
 		n_max_avioes_esteira = atoi(argv[++i]);
 		t_bagagens_esteira = atoi(argv[++i]);
 		n_esteiras = atoi(argv[++i]);
-		t_simulacao atoi(argv[++i]);
+		t_simulacao = atoi(argv[++i]);
 
 	} else { // Número incorreto de argumentos
 		printf("Todas as entradas são inteiros positivos!!\nUso:\n");
@@ -76,10 +77,10 @@ int main (int argc, char** argv) {
 
 	// Inicialização do aeroporto
 	n_args = 8;
-	size_t args [n_args] = {n_pistas, n_portoes, n_esteiras, 
-							n_max_avioes_esteira,
-							t_pouso_decolagem, t_remover_bagagens, 
-							t_inserir_bagagens, t_bagagens_esteira};
+	size_t args[8] = {n_pistas, n_portoes, n_esteiras, 
+						n_max_avioes_esteira,
+						t_pouso_decolagem, t_remover_bagagens, 
+						t_inserir_bagagens, t_bagagens_esteira};
 
 	aeroporto_t* meu_aeroporto = iniciar_aeroporto(args, n_args);
 
