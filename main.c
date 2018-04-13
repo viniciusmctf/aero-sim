@@ -66,21 +66,21 @@ int main (int argc, char** argv) {
 	}
 
 	// Impressão com os parâmetros selecionados para simulação
-	printf("Simulação iniciada com tempo total: %u\n", t_simulacao);
-	printf("Tempo para criação de aviões: %u - %u\n", t_novo_aviao_min, t_novo_aviao_max);
-	printf("Número de pistas de pouso: %u\n", n_pistas);
-	printf("Tempo de pouso e decolagem: %u\n", t_pouso_decolagem);
-	printf("Número de portões de embarque: %u\n", n_portoes);
-	printf("Tempo de inserção (%u) e remoção (%u) de bagagens\n", t_inserir_bagagens, t_remover_bagagens);
-	printf("Número de esteiras: %u, com %d aviões por esteira\n", n_esteiras, n_max_avioes_esteira);
-	printf("Tempo das bagagens nas esteiras: %u\n", t_bagagens_esteira);
+	printf("Simulação iniciada com tempo total: %lu\n", t_simulacao);
+	printf("Tempo para criação de aviões: %lu - %lu\n", t_novo_aviao_min, t_novo_aviao_max);
+	printf("Número de pistas de pouso: %lu\n", n_pistas);
+	printf("Tempo de pouso e decolagem: %lu\n", t_pouso_decolagem);
+	printf("Número de portões de embarque: %lu\n", n_portoes);
+	printf("Tempo de inserção (%lu) e remoção (%lu) de bagagens\n", t_inserir_bagagens, t_remover_bagagens);
+	printf("Número de esteiras: %lu, com %lu aviões por esteira\n", n_esteiras, n_max_avioes_esteira);
+	printf("Tempo das bagagens nas esteiras: %lu\n", t_bagagens_esteira);
 
 	// Inicialização do aeroporto
 	n_args = 8;
 	size_t args[8] = {n_pistas, n_portoes, n_esteiras, 
-						n_max_avioes_esteira,
-						t_pouso_decolagem, t_remover_bagagens, 
-						t_inserir_bagagens, t_bagagens_esteira};
+				n_max_avioes_esteira,
+				t_pouso_decolagem, t_remover_bagagens, 
+				t_inserir_bagagens, t_bagagens_esteira};
 
 	aeroporto_t* meu_aeroporto = iniciar_aeroporto(args, n_args);
 
