@@ -27,7 +27,7 @@ int main (int argc, char** argv) {
 	size_t n_max_avioes_esteira, n_esteiras;
 	size_t n_args;
 
-	// Variáveis de prioridade
+	// Variáveis de prioridade (inicio p_)
 	size_t p_combustivel_min, p_combustivel_max;
 
 	if (argc == 5) { // Argumentos sem tempos de execução
@@ -38,6 +38,8 @@ int main (int argc, char** argv) {
 		t_inserir_bagagens = TEMPO_INSERIR_BAGAGENS;
 		t_bagagens_esteira = TEMPO_BAGAGENS_ESTEIRA;
 		t_simulacao = TEMPO_SIMULACAO;
+		p_combustivel_min = COMBUSTIVEL_MIN;
+		p_combustivel_max = COMBUSTIVEL_MAX;
 		n_pistas = atoi(argv[1]);
 		n_portoes = atoi(argv[2]);
 		n_max_avioes_esteira = atoi(argv[3]);

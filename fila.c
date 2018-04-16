@@ -6,7 +6,7 @@
  * Descrições em fila.h
  **/
 
- elemento_t * aloca_elemento () {
+ elemento_t * aloca_elemento (aviao_t * dado) {
     return NULL;
  }
 
@@ -19,7 +19,7 @@ fila_ordenada_t * criar_fila () {
 }
 
 void desaloca_fila (fila_ordenada_t * fila) {
-  
+
 }
 
 void inserir (fila_ordenada_t * fila, aviao_t * dado) {
