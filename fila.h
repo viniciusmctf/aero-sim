@@ -16,7 +16,7 @@ typedef struct elemento_t {
 } elemento_t;
 
 // Alocacao dinamica do elemento
-elemento_t * aloca_elemento ();
+elemento_t * aloca_elemento (aviao_t * dado);
 void desaloca_elemento (elemento_t * elemento);
 
 /**
