@@ -6,6 +6,8 @@
 
 #define NOVO_AVIAO_MIN 30
 #define NOVO_AVIAO_MAX 120
+#define COMBUSTIVEL_MIN 1
+#define COMBUSTIVEL_MAX 10
 #define TEMPO_POUSO_DECOLAGEM 40
 #define TEMPO_REMOVER_BAGAGENS 90
 #define TEMPO_INSERIR_BAGAGENS 110
@@ -25,6 +27,9 @@ int main (int argc, char** argv) {
 	size_t n_max_avioes_esteira, n_esteiras;
 	size_t n_args;
 
+	// Variáveis de prioridade
+	size_t p_combustivel_min, p_combustivel_max;
+
 	if (argc == 5) { // Argumentos sem tempos de execução
 		t_novo_aviao_min = NOVO_AVIAO_MIN;
 		t_novo_aviao_max = NOVO_AVIAO_MAX;
@@ -38,10 +43,12 @@ int main (int argc, char** argv) {
 		n_max_avioes_esteira = atoi(argv[3]);
 		n_esteiras = atoi(argv[4]);
 
-	} else if (argc == 12) { // Argumentos com tempos de execução
+	} else if (argc == 14) { // Argumentos com tempos de execução
 		int i = 0; // Este contador será incrementado antes de coletar um argumento
 		t_novo_aviao_min = atoi(argv[++i]);
 		t_novo_aviao_max = atoi(argv[++i]);
+		p_combustivel_min = atoi(argv[++i]);
+		p_combustivel_max = atoi(argv[++i]);
 		t_pouso_decolagem = atoi(argv[++i]);
 		n_pistas = atoi(argv[++i]);
 		t_remover_bagagens = atoi(argv[++i]);
@@ -55,6 +62,7 @@ int main (int argc, char** argv) {
 	} else { // Número incorreto de argumentos
 		printf("Todas as entradas são inteiros positivos!!\nUso:\n");
 		printf("./aeroporto  NOVO_AVIAO_MIN  NOVO_AVIAO_MAX\n");
+		printf("COMBUSTIVEL_MIN COMBUSTIVEL_MAX\n");
 		printf("TEMPO_POUSO_DECOLAGEM  NUMERO_PISTAS  TEMPO_REMOVER_BAGAGENS\n");
 		printf("TEMPO_INSERIR_BAGAGENS  NUMERO_PORTOES  MAXIMO_AVIOES_ESTEIRA\n");
 		printf("TEMPO_BAGAGENS_ESTEIRA  NUMERO_ESTEIRAS  TEMPO_SIMULACAO\n");
