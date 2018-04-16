@@ -9,9 +9,6 @@ typedef pthread_t esteira_t;
 typedef size_t tempo_t;
 
 typedef struct {
-	pthread_mutex_t* pistas_livres;
-	pthread_mutex_t* portoes_livres;
-	sem_t* esteiras_livres;
 	esteira_t* esteiras;
 	tempo_t t_pouso_decolagem;
 	tempo_t t_remover_bagagens;
