@@ -5,11 +5,11 @@ EXEC=simulacao
 
 all: $(EXEC)
 
-%.o: %.c 
+%.o: %.c
 	$(CC) -c $^ $(CFLAGS)
 
-$(EXEC): main.o aeroporto.o
+$(EXEC): main.o aeroporto.o aviao.o fila.o
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm *.o $(EXEC)	
+	rm *.o $(EXEC)

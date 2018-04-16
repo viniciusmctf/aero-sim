@@ -1,7 +1,10 @@
+#ifndef AEROPORTO_H
+#define AEROPORTO_H
+
 #include <pthread.h>
 #include <semaphore.h>
+#include "aviao.h"
 
-typedef pthread_t aviao_t;
 typedef pthread_t esteira_t;
 typedef size_t tempo_t;
 
@@ -33,7 +36,7 @@ void aproximacao_aeroporto (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
  * Esta função deve fazer com que o aviao pouse, utilizando uma pista livre.
- * Ela não pode ser chamada se não houver pistas livres. Em seguida o avião 
+ * Ela não pode ser chamada se não houver pistas livres. Em seguida o avião
  * deve se acoplar a um portão, caso haja um livre, se não houver, ele deve
  * esperar.
  **/
@@ -71,7 +74,9 @@ void adicionar_bagagens_esteira (aeroporto_t* aeroporto, aviao_t* aviao);
 void decolar_aviao (aeroporto_t* aeroporto, aviao_t* aviao);
 
 /**
- * Esta função deve desalocar todos os recursos previamente 
+ * Esta função deve desalocar todos os recursos previamente
  * alocados pelo aeroporto. Retorna 1 caso bem sucedido.
  **/
 int finalizar_aeroporto (aeroporto_t* aeroporto);
+
+#endif

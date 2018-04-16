@@ -13,9 +13,7 @@
 #define TEMPO_SIMULACAO 10000
 
 int main (int argc, char** argv) {
-	// Array de aviões (threads)
-	aviao_t* avioes;
-	
+
 	// Variáveis temporais (inicio t_)
 	size_t t_novo_aviao_min, t_novo_aviao_max;
 	size_t t_pouso_decolagem;
@@ -39,7 +37,7 @@ int main (int argc, char** argv) {
 		n_portoes = atoi(argv[2]);
 		n_max_avioes_esteira = atoi(argv[3]);
 		n_esteiras = atoi(argv[4]);
-	
+
 	} else if (argc == 12) { // Argumentos com tempos de execução
 		int i = 0; // Este contador será incrementado antes de coletar um argumento
 		t_novo_aviao_min = atoi(argv[++i]);
@@ -77,9 +75,9 @@ int main (int argc, char** argv) {
 
 	// Inicialização do aeroporto
 	n_args = 8;
-	size_t args[8] = {n_pistas, n_portoes, n_esteiras, 
+	size_t args[8] = {n_pistas, n_portoes, n_esteiras,
 				n_max_avioes_esteira,
-				t_pouso_decolagem, t_remover_bagagens, 
+				t_pouso_decolagem, t_remover_bagagens,
 				t_inserir_bagagens, t_bagagens_esteira};
 
 	aeroporto_t* meu_aeroporto = iniciar_aeroporto(args, n_args);
