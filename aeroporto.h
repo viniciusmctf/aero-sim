@@ -1,19 +1,21 @@
 #ifndef AEROPORTO_H
 #define AEROPORTO_H
 
-#include <pthread.h>
-#include <semaphore.h>
 #include "aviao.h"
 
-typedef pthread_t esteira_t;
 typedef size_t tempo_t;
 
 typedef struct {
-	esteira_t* esteiras;
+	size_t n_pistas
+	size_t n_portoes
+	size_t n_esteiras,
+	size_t n_max_avioes_esteira,
 	tempo_t t_pouso_decolagem;
 	tempo_t t_remover_bagagens;
 	tempo_t t_inserir_bagagens;
 	tempo_t t_bagagens_esteira;
+	// Adicionar aqui outros atributos que você achar necessários.
+	// Exemplo: esteiras, portões, etc...
 } aeroporto_t;
 
 
